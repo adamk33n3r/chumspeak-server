@@ -1,0 +1,6 @@
+﻿2018-09-25 06:35:19.805278|INFO    |ServerLibPriv |   |TeamSpeak 3 Server 3.0.4.4 (2018-05-30 11:06:00) SDK
+2018-09-25 06:35:19.805371|INFO    |ServerLibPriv |   |SystemInformation: Linux 4.18.9-arch1-1-ARCH #1 SMP PREEMPT Wed Sep 19 21:19:17 UTC 2018 x86_64 Binary: 64bit
+2018-09-25 06:35:19.805415|INFO    |ServerLibPriv |   |Using hardware aes
+2018-09-25 06:35:19.806103|WARNING |Accounting    |   |Unable to find valid license key, falling back to limited functionality
+2018-09-25 06:35:20.306308|ERROR   |Accounting    |   |local accounting reports an already running instance, instance will shutdown
+2018-09-25 06:35:20.306449|ERROR   |ServerLibPriv |   |Server() error while starting servermanager, error: instance limit reached

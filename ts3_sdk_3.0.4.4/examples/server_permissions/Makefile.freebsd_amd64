@@ -1,0 +1,19 @@
+#
+# Makefile to build TeamSpeak 3 SDK Server Permissions Sample on FreeBSD 64-bit
+#
+
+CFLAGS = -Wall -g -O0
+
+all: libs ts3_server_permissions_sample
+
+libs: ../../bin/freebsd/amd64/libts3server.so
+	ln -sf ../../bin/freebsd/amd64/libts3server.so .
+
+ts3_server_permissions_sample: main.o
+	clang -o ts3_server_permissions_sample main.o -Wl,-rpath,"." -L../../bin/freebsd/amd64 -lts3server
+
+main.o: main.c
+	clang -c -I../../include main.c $(CFLAGS)
+
+clean:
+	rm -rf *.o ts3_server_permissions_sample

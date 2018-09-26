@@ -1,0 +1,6 @@
+﻿2018-09-21 05:02:13.141738|INFO    |ServerLibPriv |   |TeamSpeak 3 Server 3.0.4.4 (2018-05-30 11:06:00) SDK
+2018-09-21 05:02:13.142101|INFO    |ServerLibPriv |   |SystemInformation: Linux 4.18.8-arch1-1-ARCH #1 SMP PREEMPT Sat Sep 15 20:34:48 UTC 2018 x86_64 Binary: 64bit
+2018-09-21 05:02:13.142237|INFO    |ServerLibPriv |   |Using hardware aes
+2018-09-21 05:02:13.143707|WARNING |Accounting    |   |Unable to find valid license key, falling back to limited functionality
+2018-09-21 05:02:14.058616|INFO    |              |   |Puzzle precompute time: 414
+2018-09-21 05:02:14.058982|INFO    |VirtualSvrMgr |   |addServer() VirtualServer(1) started

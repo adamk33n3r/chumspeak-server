@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">TS3 SDK Client</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Start Fragment -->
+    <string name="input_server_hint">Serveraddress</string>
+    <string name="input_server_port">Port</string>
+    <string name="input_server_password">Password</string>
+    <string name="input_server_nickname">Nickname</string>
+    <string name="button_clear">clear log</string>
+    <string name="button_server_connect">connect</string>
+    <string name="button_server_connecting">connecting …</string>
+    <string name="button_server_disconnecting">disconnecting …</string>
+    <string name="button_server_disconnect">disconnect</string>
+    <string name="server_connected">connected</string>
+    <string name="server_disconnected">disconnected</string>
+    <string name="input_required">This field is required!</string>
+    <string name="permission_ask_again_title">Permissions Required</string>
+    <string name="permission_ask_again_info">This app may not work correctly without the requested permissions.</string>
+    <string name="permission_open_app_settings">Open the app settings screen to modify app permissions.</string>
+    <string name="button_exit">Exit</string>
+    <string name="button_settings">Open App Settings</string>
+    <string name="button_request_permissions">Request permissions</string>
+
+
+    <!-- Hardware Not Supported Fragment -->
+    <string name="unsupporteddevice_title">Device not supported</string>
+    <string name="cpu_unsupporteddevice_title">CPU</string>
+    <string name="audio_unsupporteddevice_title">Audio</string>
+    <string name="cpu_unsupporteddevice_info">The device you are using seems to be an device with an ARMv6 architecture, but TeamSpeak3 requires at least a device with an ARMv7 architecture.\nIf you think this is an error on our side please visit our forum @ http://forum.teamspeak.com</string>
+    <string name="audio_unsupporteddevice_info">We could not find any suitable audio device. Please visit our forum @ www.teamspeak.com so we can extend our supported devices</string>
+    <string name="button_close_application">Close Application</string>
+
+
+
+</resources>

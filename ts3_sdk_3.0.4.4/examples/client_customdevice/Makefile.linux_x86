@@ -1,0 +1,23 @@
+#
+# Makefile to build TeamSpeak 3 SDK Client Minimal Sample on Linux
+#
+
+CFLAGS = -Wall -g -O0
+
+all: libs ts3_client_customdevice_sample
+
+libs: ../../bin/linux/x86/libts3client.so
+	ln -sf ../../bin/linux/x86/libts3client.so .
+	ln -sf ../../bin/linux/x86/soundbackends .
+
+ts3_client_customdevice_sample: main.o wave.o
+	gcc -o ts3_client_customdevice_sample main.o wave.o -Wl,-rpath,"." -L../../bin/linux/x86/ -lts3client -ldl
+
+main.o: main.c
+	gcc -c -I../../include main.c $(CFLAGS)
+
+wave.o: wave.c
+	gcc -c -I../../include wave.c $(CFLAGS)
+
+clean:
+	rm -rf *.o ts3_client_customdevice_sample

@@ -1,0 +1,20 @@
+#
+# Makefile to build TeamSpeak 3 SDK Client Sample on Mac OS X
+#
+
+CFLAGS = -Wall -g -O0
+
+all: soundbackends ts3_client_sample
+
+soundbackends:
+	ln -s ../../bin/mac/soundbackends .
+
+ts3_client_sample: main.o
+	gcc -o ts3_client_sample main.o -L../../bin/mac -lts3client
+	install_name_tool -change /usr/local/lib/libts3client.dylib ../../bin/mac/libts3client.dylib ts3_client_sample
+
+main.o: main.c
+	gcc -c -I../../include main.c $(CFLAGS)
+
+clean:
+	rm -rf *.o ts3_client_sample

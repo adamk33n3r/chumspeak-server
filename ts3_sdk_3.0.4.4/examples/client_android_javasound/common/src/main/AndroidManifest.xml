@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.teamspeak.common">
+
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" android:required="false"/>
+
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false"/>
+
+    <application>
+        <service android:name="com.teamspeak.common.TelecomConnectionService"
+            android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE">
+            <intent-filter>
+                <action android:name="android.telecom.ConnectionService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

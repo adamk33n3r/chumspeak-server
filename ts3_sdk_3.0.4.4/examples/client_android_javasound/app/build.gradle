@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.teamspeak.sdk.example"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 5
+        versionName "1.12"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+        }
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-fexceptions"
+                arguments '-DANDROID_STL=c++_shared', '-DANDROID_TOOLCHAIN=clang',
+                        '-DANDROID_PLATFORM=android-21'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            // let gradle pack the shared library into apk
+            jniLibs.srcDirs = ['../../../bin/android']
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+        }
+    }
+}
+
+dependencies {
+    implementation project(":soundbackend")
+    implementation project(":common")
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation "com.android.support:appcompat-v7:$versions.supportLib"
+    implementation "com.android.support:design:$versions.supportLib"
+    implementation "com.android.support:support-v4:$versions.supportLib"
+    implementation "com.android.support:recyclerview-v7:$versions.supportLib"
+    testImplementation 'junit:junit:4.12'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin_version"
+}
+repositories {
+    mavenCentral()
+}
