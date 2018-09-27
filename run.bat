@@ -1,1 +1,1 @@
-docker run --rm -it -v %cd%:/project adamk33n3r/ubuntu-cmake
+docker run --rm -it -v %cd%:/project -p 9987:9987 adamk33n3r/ubuntu-cmake /project/build/chumspeak-server
