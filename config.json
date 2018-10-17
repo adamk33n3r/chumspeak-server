@@ -1,0 +1,14 @@
+{
+  "channels": [
+    {
+      "id": 1,
+      "name": "channel1"
+    },
+    {
+      "id": 3,
+      "name": "channel2"
+    }
+  ],
+  "keyPair": "MG8DAgeAAgEgAiEAgJqwbhf1hcKsDCm9ObVsrqAQUbarb3D8oMBe0bHnUtsCIQDLSZI+0gAZK7KnFbfjNA31aHGY+Eq0V3kH/IzPd4SWcgIgDEZwPRMB5F74ZpNoZBsmK+PiX0Vn/PoJrASlA2yPX5w=",
+  "serverId": 1
+}
