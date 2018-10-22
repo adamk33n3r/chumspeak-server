@@ -1,14 +1,14 @@
 {
   "channels": [
     {
+      "description": "Where users connect when not 'connected' so they can perform operations like creating channels",
       "id": 1,
-      "name": "channel1"
-    },
-    {
-      "id": 3,
-      "name": "channel2"
+      "name": "offline-lobby"
     }
   ],
-  "keyPair": "MG8DAgeAAgEgAiEAgJqwbhf1hcKsDCm9ObVsrqAQUbarb3D8oMBe0bHnUtsCIQDLSZI+0gAZK7KnFbfjNA31aHGY+Eq0V3kH/IzPd4SWcgIgDEZwPRMB5F74ZpNoZBsmK+PiX0Vn/PoJrASlA2yPX5w=",
-  "serverId": 1
+  "keyPair": "MHADAgeAAgEgAiEA0MldQSR/FO3C07YmHyxrR9CCurpo3GpHP+pRLyY83MMCIQCaKS0rw3cLYsDho64NSKXibBgpFwfo80TWGAV62cnaKwIhANepHZtaN5jiWusS5yH022xGfyfo6UmtFQLJhLrLhzlC",
+  "logTypes": {
+    "console": false,
+    "file": true
+  }
 }

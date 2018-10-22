@@ -18,7 +18,12 @@ configure_file (
 include_directories("${PROJECT_BINARY_DIR}")
 
 # add_executable (chumspeak-server example.c id_io.c)
-add_executable (chumspeak-server server.cpp id_io.c)
+add_executable (chumspeak-server
+  src/main.cpp
+  src/Config.cpp
+  src/Listeners.cpp
+  src/Server.cpp
+)
 #link_directories ("${PROJECT_SOURCE_DIR}/ts3_sdk_3.0.4.4/bin/linux/amd64")
 find_library (TS3SERVER_LIBRARY
   NAMES ts3server
