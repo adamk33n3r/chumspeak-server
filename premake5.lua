@@ -15,7 +15,8 @@ project "ChumSpeakServer"
 
   configuration "linux"
     links { "./ts3_sdk_3.0.4.4/bin/linux/amd64/ts3server" }
-    linkoptions '-Wl,-rpath=./ts3_sdk_3.0.4.4/bin/linux/amd64'
+    --linkoptions '-Wl,-rpath=./ts3_sdk_3.0.4.4/bin/linux/amd64'
+    runpathdirs { './ts3_sdk_3.0.4.4/bin/linux/amd64' }
     --libdirs { "./ts3_sdk_3.0.4.4/bin/linux/amd64" }
   configuration "windows"
     links { "./ts3_sdk_3.0.4.4/bin/windows/win64/ts3server" }
