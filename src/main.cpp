@@ -16,6 +16,7 @@
 bool check_error(unsigned int error);
 
 int main() {
+    std::cout << "v" << ChumSpeakServer_VERSION_MAJOR << "." << ChumSpeakServer_VERSION_MINOR << std::endl;
 
     std::shared_ptr<Config> configPtr = std::make_shared<Config>("config.json");
     Config& config = *configPtr;

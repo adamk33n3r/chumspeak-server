@@ -31,6 +31,11 @@
 *.out
 *.app
 
-build
+# Premake
+obj
+Makefile
+*.make
+
+bin
 logs
 keypair_*.txt

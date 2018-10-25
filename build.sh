@@ -1,3 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
-docker run --rm -it -v $(pwd):/project adamk33n3r/ubuntu-cmake
+premake5 gmake
+make

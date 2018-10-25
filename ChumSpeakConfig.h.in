@@ -1,3 +1,0 @@
-// the configured options and settings for Tutorial
-#define ChumSpeakServer_VERSION_MAJOR @ChumSpeakServer_VERSION_MAJOR@
-#define ChumSpeakServer_VERSION_MINOR @ChumSpeakServer_VERSION_MINOR@

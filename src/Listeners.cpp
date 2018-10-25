@@ -3,9 +3,9 @@
 #include <iostream>
 #include <teamspeak/serverlib.h>
 
-std::shared_ptr<Config> Listeners::config;
+#include "Utils.h"
 
-bool checkError(unsigned int error, const char* msg);
+std::shared_ptr<Config> Listeners::config;
 
 ServerLibFunctions Listeners::getFunctionPointers(const std::shared_ptr<Config>& config) {
     Listeners::config = config;
@@ -24,7 +24,7 @@ void Listeners::onChannelCreated(uint64 serverId, anyID invokerClientId, uint64 
 
     char* name;
     unsigned int error = ts3server_getChannelVariableAsString(serverId, channelId, CHANNEL_NAME, &name);
-    checkError(error, "Failed to get channel name");
+    Utils::checkError(error, "Failed to get channel name");
 
     // Created by client
     if(invokerClientId != 0) {
