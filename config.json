@@ -6,9 +6,9 @@
       "name": "offline-lobby"
     }
   ],
-  "keyPair": "MHADAgeAAgEgAiEA0MldQSR/FO3C07YmHyxrR9CCurpo3GpHP+pRLyY83MMCIQCaKS0rw3cLYsDho64NSKXibBgpFwfo80TWGAV62cnaKwIhANepHZtaN5jiWusS5yH022xGfyfo6UmtFQLJhLrLhzlC",
+  "keyPair": "MG8DAgeAAgEgAiEAs/KHN1Bp1DTqZQanYhLI75K+3fGzt2Fy91UyEUR4HucCIHRz11rJEVkLD0oZzEg7PraizhyHkTjrHMgC/tp7BmPfAiEA1Rzxi0VGZiLe3N9ugkTzZxP+xRorX2mVhsutp68iDiE=",
   "logTypes": {
-    "console": false,
+    "console": true,
     "file": true
   }
 }

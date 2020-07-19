@@ -25,7 +25,7 @@ Config::Config(const std::string &configPath) {
         json = {
             { "keyPair", "" },
             { "channels", nlohmann::json::array() },
-            { "logTypes", { "file", true }, { "console", false } }
+            { "logTypes", { { "file", true }, { "console", false } } }
         };
     }
     configFile.close();

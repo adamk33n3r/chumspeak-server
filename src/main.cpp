@@ -20,6 +20,7 @@ int main() {
 
     std::shared_ptr<Config> configPtr = std::make_shared<Config>("config.json");
     Config& config = *configPtr;
+    std::cout << config.dump() << std::endl;
 
     unsigned int error = 0;
     char c = '\0';
