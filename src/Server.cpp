@@ -48,7 +48,7 @@ uint64 Server::start() {
             auto channel = config["channels"][index];
             int id = channel["id"];
             std::string name = channel["name"].get<std::string>();
-            std::string description = channel["description"].get<std::string>();
+            std::string description = channel.value<std::string>("description", "");
             struct TS3Variables* channelVars;
 
             error = ts3server_getVirtualServerCreationParamsChannelCreationParams(vscp, index, &ccp);

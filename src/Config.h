@@ -2,6 +2,7 @@
 #define CONFIG_H
 
 #include <string>
+#include <memory>
 #include "json.hpp"
 
 class Config {

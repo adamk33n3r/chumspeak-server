@@ -72,6 +72,9 @@ int main() {
                 std::cout << result << std::endl;
                 ts3server_freeMemory(result);
                 break;
+            case 'h':
+                LOG("Check the source code for the available commands.");
+                break;
             default:
                 unknownInput = true;
         }

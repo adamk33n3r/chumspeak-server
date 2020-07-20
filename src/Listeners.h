@@ -13,6 +13,7 @@ class Listeners {
     static void onChannelCreated(uint64 serverId, anyID invokerClientId, uint64 channelId);
     static void onChannelDeleted(uint64 serverId, anyID invokerClientId, uint64 channelId);
     static void onClientConnected(uint64 serverId, anyID clientId, uint64 channelId, unsigned int* removeClientError);
+    static void onClientDisconnected(uint64 serverId, anyID clientId, uint64 channelId);
     static void onClientStartTalkingEvent(uint64 serverID, anyID clientID);
 
     private:
