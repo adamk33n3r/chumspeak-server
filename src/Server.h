@@ -12,7 +12,7 @@ class Server {
     Server(std::shared_ptr<Config> config);
     uint64 start();
     void stop() const;
-    std::vector<Channel> getChannels() const;
+    std::vector<Channel> getChannels(bool withClients = false) const;
     private:
     std::shared_ptr<Config> config;
     uint64 serverId;

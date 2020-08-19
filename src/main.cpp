@@ -59,9 +59,12 @@ int main() {
                 break;
             case 'c':
                 {
-                    std::vector<Channel> channels = server.getChannels();
+                    std::vector<Channel> channels = server.getChannels(true);
                     for (Channel channel : channels) {
                         LOG(channel.id << " - " << channel.name << " - " << channel.description);
+                        for (auto it = channel.clients.begin(); it != channel.clients.end(); ++it) {
+                            LOG("\t" << (*it).id << " - " << (*it).nickname);
+                        }
                     }
                 }
                 break;

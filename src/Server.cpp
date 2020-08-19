@@ -71,6 +71,11 @@ uint64 Server::start() {
                 Utils::checkError(error, "Failed to set channel flag default");
                 error = ts3server_setVariableAsInt(channelVars, CHANNEL_CODEC, CODEC_SPEEX_NARROWBAND);
                 Utils::checkError(error, "Failed to set channel codec");
+            } else {
+                error = ts3server_setVariableAsInt(channelVars, CHANNEL_CODEC, CODEC_OPUS_VOICE);
+                Utils::checkError(error, "Failed to set channel codec in setup");
+                error = ts3server_setVariableAsInt(channelVars, CHANNEL_CODEC_QUALITY, 7);
+                Utils::checkError(error, "Failed to set channel codec quality");
             }
 
             error = ts3server_setVariableAsInt(channelVars, CHANNEL_FLAG_PERMANENT, 1);
@@ -100,7 +105,7 @@ void Server::stop() const {
     Utils::checkError(ts3server_stopVirtualServer(serverId), "Failed to stop server");
 }
 
-std::vector<Channel> Server::getChannels() const {
+std::vector<Channel> Server::getChannels(bool withClients) const {
     uint64* ids;
     unsigned int error;
     error = ts3server_getChannelList(serverId, &ids);
@@ -116,7 +121,28 @@ std::vector<Channel> Server::getChannels() const {
         error = ts3server_getChannelVariableAsString(serverId, cid, CHANNEL_DESCRIPTION, &description);
         Utils::checkError(error, "Failed to retrieve channel description");
 
-        list.push_back({ cid, name, description });
+        Channel channel { cid, name, description };
+
+        if (withClients) {
+            anyID* clients;
+            error = ts3server_getChannelClientList(this->serverId, cid, &clients);
+            Utils::checkError(error, "Failed to retrieve channel clients");
+
+            for (int j = 0; clients[j]; ++j) {
+                anyID clientID = clients[j];
+                char* nickname;
+                error = ts3server_getClientVariableAsString(this->serverId, clientID, CLIENT_NICKNAME, &nickname);
+                Utils::checkError(error, "Failed to retrieve client nickname");
+
+                channel.clients.push_back({ clientID, nickname });
+
+                ts3server_freeMemory(nickname);
+            }
+
+            ts3server_freeMemory(clients);
+        }
+
+        list.push_back(channel);
     }
     ts3server_freeMemory(ids);
     return list;

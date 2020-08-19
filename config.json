@@ -4,6 +4,11 @@
       "description": "Where users connect when not 'connected' so they can perform operations like creating channels",
       "id": 1,
       "name": "offline-lobby"
+    },
+    {
+      "description": "",
+      "id": 2,
+      "name": "random"
     }
   ],
   "keyPair": "MG8DAgeAAgEgAiEAs/KHN1Bp1DTqZQanYhLI75K+3fGzt2Fy91UyEUR4HucCIHRz11rJEVkLD0oZzEg7PraizhyHkTjrHMgC/tp7BmPfAiEA1Rzxi0VGZiLe3N9ugkTzZxP+xRorX2mVhsutp68iDiE=",
